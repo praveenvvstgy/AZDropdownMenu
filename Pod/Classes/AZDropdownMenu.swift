@@ -132,6 +132,9 @@ public class AZDropdownMenu: UIView {
         menuView.delegate = self
         menuView.scrollEnabled = false
         menuView.accessibilityIdentifier = "MENU"
+        let slideUp: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "hideMenu")
+        slideUp.direction = .Up
+        menuView.addGestureRecognizer(slideUp)
         addSubview(menuView)
     }
 
